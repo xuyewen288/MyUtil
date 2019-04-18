@@ -7,5 +7,38 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme" />
+        android:theme="@style/AppTheme" >
+
+    <activity
+        android:name=".wxapi.WXEntryActivity"
+        android:label="@string/app_name"
+        android:exported="true"
+        android:taskAffinity="com.xyw.myutil"
+        android:launchMode="singleTask">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+
+        <intent-filter>
+            <action android:name="android.intent.action.VIEW"/>
+            <category android:name="android.intent.category.DEFAULT"/>
+            <data android:scheme="appid"/>
+        </intent-filter>
+    </activity>
+
+    <activity
+        android:name=".wxapi.WXPayEntryActivity"
+        android:label="@string/app_name"
+        android:exported="true"
+        android:taskAffinity="com.xyw.myutil"
+        android:launchMode="singleTask">
+        <intent-filter>
+            <action android:name="android.intent.action.VIEW"/>
+            <category android:name="android.intent.category.DEFAULT"/>
+            <data android:scheme="appid"/>
+        </intent-filter>
+    </activity>
+    </application>
 </manifest>
