@@ -46,7 +46,9 @@ public class WXHelp {
     public synchronized static WXHelp getInstance(Context context) throws NullPointerException {
         if (instance == null ) {
             if(TextUtils.isEmpty(APPID) || TextUtils.isEmpty(APPSECRET)){
-                throw new NullPointerException("APPID or APPSECRET null");
+                System.out.println("WXHelp APPID or APPSECRET null");
+                return null;
+//                throw new NullPointerException("APPID or APPSECRET null");
             }
             instance = new WXHelp(context,APPID,APPSECRET);
         }
